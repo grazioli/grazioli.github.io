@@ -1,0 +1,12 @@
+http://www.agintersys.com/
+http://www.agintersys.com/images/ico/apple-touch-icon-144x144-precomposed.png
+http://www.agintersys.com/images/ico/apple-touch-icon-114x114-precomposed.png
+http://www.agintersys.com/images/ico/apple-touch-icon-72x72-precomposed.png
+http://www.agintersys.com/images/ico/apple-touch- icon-precomposed.png
+http://www.agintersys.com/images/bg/cr.jpg
+http://www.agintersys.com/bio.html
+http://www.agintersys.com/work.html
+http://www.agintersys.com/index.html
+http://www.agintersys.com/research.html
+http://www.agintersys.com/images/bg/work.jpg
+http://www.agintersys.com/images/bg/research.jpg

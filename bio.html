@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="style/bootstrap.min.css" rel="stylesheet">
+
+    <meta name="description" content="Alessandro Grazioli's Personal Web Site" />
+    <meta name="author" content="Alessandro Grazioli" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="15 DAYS" />
+    <meta name="keywords" content="Informatica, Web, Design, Ricerca"/>
+    
+    <title>AG Intersys</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/ico/favicon.ico" />
+
+    <!-- Le styles -->
+    <link href="style/style.css" rel="stylesheet">
+            
+    <!-- Google Fonts links, to use special fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,900italic,900,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+    
+    <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+    
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144x144-precomposed.png">
+    
+    <!-- For iPhone with high-resolution Retina display: -->
+    
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114x114-precomposed.png">
+    
+    <!-- For first- and second-generation iPad: -->
+    
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72x72-precomposed.png">
+    
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch- icon-precomposed.png">
+    
+    <!-- ********************* selectivizr is a JavaScript utility that emulates CSS3 pseudo-classes and attribute selectors in Internet Explorer 6-8 ********************* -->
+    <!--[if (gte IE 6)&(lte IE 8)]>
+    	<script type="text/javascript" src="js/selectivizr.js"></script>
+    	<noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+    <![endif]--> 
+
+  </head>
+
+  <body>
+  
+  	<div id="qLoverlay">
+        <!-- Preloader Background -->
+        <div id="overlay2">
+        </div>
+    </div>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" id="navbarContainer" style="top:-56px; font-family:'Times New Roman', Times, serif;" role="navigation">
+      <div class="container">
+      <div class="navbar-inner"> 
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" onClick="blackWords();">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand bar-link-font" style="font-size:30px; color:#FFF; margin-left:70px;"><img id="smallLogoWhite" src="images/logo/logoNoText.png" width="45" height="30" style=" opacity:1;" /><img id="smallLogoBlack" src="images/logo/logoNoTextBlack.png" width="45" height="30" style="position:relative; left:-45px; opacity:0;" /></a>
+        </div>
+        
+        <!-- When the screen width os too little, the bar is collapsed and  button is added to display it. The "in" class is added, so its style can change the appearance of the menu -->
+        <div id="barMenuList" class="navbar-collapse collapse no-transition">        
+          <ul class="nav navbar-nav">
+          	<li><a class="barLink" href="index.html"><font id="homeFont" style="text-shadow: 0 0 0 rgba(0, 0, 0, 0); font-size:12px; font-family:'Open Sans';" class="container-content">HOME</font></a></li>
+            <li><a class="barLink"><font id="bioFont" style="text-shadow: 0 0 0 rgba(0, 0, 0, 0); font-size:12px; font-family:'Open Sans'; color:rgb(0, 206, 247); cursor:default;" class="container-content current-page-link">BIO</font></a></li>
+            <li><a class="barLink" href="work.html"><font id="researchFont" style="text-shadow: 0 0 0 rgba(0, 0, 0, 0); font-size:12px; font-family:'Open Sans';" class="container-content">WORK</font></a></li>
+            <li><a class="barLink" href="research.html"><font id="publicationsFont" style="text-shadow: 0 0 0 rgba(0, 0, 0, 0); font-size:12px; font-family:'Open Sans';" class="container-content">RESEARCH</font></a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="barLink contact-me" href="javascript:void(0)" onClick="mail();" style="text-decoration:none;"><font id="contactFont" class="container-content bar-link-font">CONTACT ME</font></a></li>
+          </ul>
+          
+          </div>
+          
+          <!-- Border at the bottom of the bar -->
+          <!-- <hr id="navbar-border-bottom" style="width: 85%; border-top:1px dashed rgba(255, 255, 255, 0.3); position: relative; top: -15px; opacity:0;"> -->
+          
+        </div><!--/.nav-collapse -->
+      </div><!--/.container -->
+    </div><!--/.navbar -->
+    
+    
+    
+    <div class="container">
+    
+    
+    	<!-- ********************* Cross SVG icon and side menu ********************* -->
+        	
+		<script src="js/snap.svg-min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+        
+        <div id="menuButtonBg"></div>
+        
+        <section class="si-icons si-icons-easing">
+            <span class="si-icon si-icon-hamburger-cross" data-icon-name="hamburgerCross" onClick="showMenu();" style="top:-2px; left:-60px;"></span>
+        </section>
+        
+        <div id="sideMenu">
+        	<!-- <img src="images/logo/logo.png" width="150" /> -->
+            
+            <div class="menu-button" style="display: table; overflow: hidden;" onClick="location.href = 'index.html'">
+                <div style="display: table-cell; vertical-align: middle;">
+                	<div>
+                		<i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOME
+                	</div>
+                </div>
+            </div>
+            
+            <div class="menu-button-current" style="display: table; overflow: hidden;">
+                <div style="display: table-cell; vertical-align: middle;">
+                	<div>
+                		<i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIO
+                	</div>
+                </div>
+            </div>
+            
+            <div class="menu-button" style="display: table; overflow: hidden;" onClick="location.href = 'work.html'">
+                <div style="display: table-cell; vertical-align: middle;">
+                	<div>
+                		<i class="fa fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WORK
+                	</div>
+                </div>
+            </div>
+            
+            <div class="menu-button" style="display: table; overflow: hidden;" onClick="location.href = 'research.html'">
+                <div style="display: table-cell; vertical-align: middle;">
+                	<div>
+                		<i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESEARCH
+                	</div>
+                </div>
+            </div>
+            
+            <div id="sideMenuLinks">
+            	<a class="linksClass" href="https://twitter.com/AlessandroGraz2"><i class="fa fa-twitter"></i></a>
+               <a class="linksClass" href="https://www.facebook.com/alessandro.grazioli1" style="margin-left:20px;"><i class="fa fa-facebook"></i></a>
+               <a class="linksClass" href="https://plus.google.com/108184499896505903960/posts" style="margin-left:20px;"><i class="fa fa-google-plus"></i></a>
+               <a class="linksClass" href="http://it.linkedin.com/pub/alessandro-grazioli/62/542/1a3" style="margin-left:20px;"><i class="fa fa-linkedin"></i></a>
+            </div>
+            
+        </div>
+        
+        <script src="js/svgicons-config.js"></script>
+		<script src="js/svgicons.js"></script>
+		<script>
+			(function() {
+				// initialize all
+				
+				[].slice.call( document.querySelectorAll( '.si-icons-default > .si-icon' ) ).forEach( function( el ) {
+					var svgicon = new svgIcon( el, svgIconConfig );
+				} );
+				
+				new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger-cross' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
+			})();
+		</script>
+        
+        <!-- ************************************************************************ -->
+    
+    
+    
+        <div id="bio" class="jumbotron masthead slide parallaxBg" data-slide="1" style="overflow:hidden; z-index:1; position:absolute; top:0; left:0; padding: 0px;">
+        
+        	<img id="bioImageBackground" class="background-image-container" src="images/bg/cr.jpg" style="position:fixed;" />
+            
+            <!-- Background image overlay -->
+            <div id="backgroundOverlay" style="background-color:rgba(0, 0, 0, 0.4); position:relative;"></div>
+            
+            <div class="arrow-down-background-div"></div>
+             
+            <div id="arrowDown1" class="arrowDownContainer arrowDown" data-slide="2">
+                <div class="arrowDownPng"></div>
+                <div class="mouseSvg"></div>
+            </div>
+            <div id="scrollDownText" class="scrollDown">
+            	<font id="scroll" class="scroll" style="position: relative; left: -40px;">SCROLL</font><font id="down" class="down" style="position: relative; left: 30px;">DOWN</font>
+            </div>
+          
+		
+        <!-- Movie background -->
+        <!-- <div class="video">
+        		<iframe src="https://www.youtube.com/embed/TzalDpwjXHc?autoplay=1&amp;modestbranding=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1&amp;version=3&amp;playerapiid=mbYTP_video-0&amp;origin=http%3A%2F%2Fwww.limecreative.gr&amp;allowfullscreen=true&amp;wmode=transparent&amp;iv_load_policy=3&amp;html5=1"
+ frameborder="0" webkitallowfullscreen
+ mozallowfullscreen allowfullscreen></iframe>
+ 
+ 				<div class="overlay">
+        </div> </div> 
+        
+        <style>
+        
+        .video {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%}
+        
+        .video iframe {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            }
+        
+        .video .overlay {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            }
+        
+        </style>
+        
+        
+        -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            <div class="row marketing bio-white slide" data-slide="2" style="padding-top:60px; padding-bottom:60px; z-index:2998; padding-left:10px; padding-right:10px; margin:0px; background:rgba(255, 255, 255, 0.95); position:relative;">
+    
+                <div id="leftContainer" class="span6 col-md-6">
+        
+                <!--
+                    <h1 class="whiteTitle"><i class="fa fa-check" style="color:#F00; font-size:30px"></i> Breve Biografia</h1>
+                    
+                    <hr class="dividerHR">
+                -->
+                  
+                    <p class="lead sectionTitle" style="font-size:50px; margin-bottom:24px; text-align:left;">Education</p>
+                    
+                    <p class="lead" style="font-size:16px; line-height:30px;">I am a Ph.D. candidate in Information Technologies at the University of Parma (Italy) where I also obtained my B.Sc. and M.Sc. in Computer Engineering.<br /><br />A paper describing the system designed for my final M.Sc. work was published and presented at LBS n.0 Workshop, hosted by the IEEE International Conference on Mobile Data Management (MDM).
+                    </p>
+                
+                    <hr class="dividerHR" style="margin-top:30px; margin-bottom:30px;">
+                    
+                    <p class="lead sectionTitle" style="font-size:50px; margin-bottom:24px; text-align:left;">Working Experience</p>
+                    
+                    <p class="lead" style="font-size:16px; line-height:30px;">I started working as an enterprise applications developer focusing on service-oriented architecture (SOA). Currently, together with my research activity &ndash; check <a href="research.html" style="color:#00CEF7;">here</a> for details &ndash; I mostly work as a mobile Android and cross-platform developer and consultant, and as a web designer.<p class="lead">Some of the companies I worked for:</p></p>
+                    
+                    <ul class="working-list" style="font-size:14px; line-height:20px; margin:0px; padding:0px;">
+                        
+                        <li style="margin-bottom:10px;"><p class="lead" style="font-size:18px;"><i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> YourAppFor <font style="font-size:14px; color:#AAA;"> IT Consultant</font></p><p class="lead" style="font-size:14px; line-height:30px; margin-top:-20px; margin-left:18px;">User Interface development for Android platform.</p></li>
+                        
+                        <li style="margin-bottom:10px;"><p class="lead" style="font-size:18px;"><i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> CISITA <font style="font-size:14px; color:#AAA;"> Teacher</font></p><p class="lead" style="font-size:14px; line-height:30px; margin-top:-20px; margin-left:18px;">I have been teaching the principles of cross-platform mobile programming including Python, HTML5, CSS3, JavaScript, Java, jQuery, Design Patterns, PhoneGap and Titanium Studio.</p></li>
+                        
+                        <li style="margin-bottom:10px;"><p class="lead" style="font-size:18px;"><i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> Sygest <font style="font-size:14px; color:#AAA;"> IT Consultant</font></p><p class="lead" style="font-size:14px; line-height:30px; margin-top:-20px; margin-left:18px;">Feasibility study, design and development of an HTML5, Python and OpenGL -based web application for the 3D visualization of mechanical hardware parts on mobile devices and browsers.</p></li>
+                        
+                        <li><p class="lead" style="font-size:18px;"><i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> ISI <font style="font-size:14px; color:#AAA;"> IT Consultant</font></p><p class="lead" style="font-size:14px; line-height:30px; margin-top:-20px; margin-left:18px;">Feasibility study, design and development of a mobile cross-platform (iOS and Android) sales force automation application for the online/offline management of product, customer and salesman information using Titanium Studio.</p></li>
+                    
+                    </ul>
+                
+                	<!-- Line which separates Misc section on small displays (visibility property is set in style.css) -->
+                	<hr id="miscSeparator" class="dividerHR" style="margin-top:30px;">
+                
+                </div>
+        
+                <div class="span6 col-md-6" style="padding-left:40px;">
+        
+                  <p class="lead sectionTitle" style="font-size:50px; margin-bottom:24px; text-align:left;">Misc</p>
+                  
+                  <p class="lead" style="font-size:16px; line-height:30px;">
+                      
+                      <i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> I am a member of IEEE (<a href="http://www.computer.org/portal/web/guest/home" style="color:#00CEF7;">Computer Society</a> and <a href="http://www.ieee-ras.org/" style="color:#00CEF7;">Robotics & Automation Society</a>), <a href="http://www.insticc.org/" style="color:#00CEF7;">INSTICC</a> (Institute for Systems and Technologies of Information, Control and Communication) and <a href="http://www.verolog.eu/" style="color:#00CEF7;">VeRoLog</a> (Working Group on Vehicle Routing and Logistics Optimization within EURO, the Association of the European Operational Research Societies).<br /><br />
+                  
+                      <i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> <a href="http://www.spinner.it/" style="color:#00CEF7;">SPINNER Consortium</a> for research granted my Ph.D. activity for a project regarding collaborative mobility in smart cities.<br /><br />
+                      
+                      <i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> I have been teacher assistant for the <font style="color:428BCA;">Operating Systems</font> course at the University of Parma for B.Sc. students in Computer, Electronics and Telecommunications Engineering.<br /><br />
+                      
+                      <i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> I have a professional experience with Java, C, C++, Python programming languages and with Javascript, PHP, HTML, XML, CSS web-oriented languages.<br /><br />
+                      
+                      <i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> I speak English, Italian and Portuguese languages.<br /><br />
+                      
+                      <i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> My <a href="http://en.wikipedia.org/wiki/Erd%C5%91s_number" style="color:#00CEF7;">Erd&ouml;s number</a> is 4 (through Katinka Wolter, who published with Miroslaw Malek, who published with Frank Harary, who published with Paul Erd&ouml;s).<br /><br />
+                      
+                      <i class="fa fa-caret-right" style="color:#F00; font-size:18px;"></i> I am a <a href="http://www.mendeley.com/profiles/alessandro-grazioli/"><font color="#00CEF7">Mendeley Advisor</font></a>.
+                      
+                      <br />
+                      
+                      <hr style="width: 100%; border-top:1px solid rgba(255, 0, 0, 1); position: relative;">
+                      <div style="text-align:center; width:100%; position:relative; top:10px;">
+                      	<button class="border-button-red" onClick="window.open('resources/cv.pdf')">Curriculum</button>
+                      </div>
+                  
+                  </p>
+        
+                </div>
+                
+            </div>
+            
+            <div id="fourthWhite" class="row-fluid marketing bio-white" style="background:rgba(0, 0, 0, .4); color:#FFF; border-bottom:1px solid #444; position:relative;">
+        
+        	<div id="circle" style="border-radius: 50%; width: 200px; height: 200px;  background-color:rgba(255, 255, 255, 0.2); position:relative; z-index:5002 !important;"><div id="circle2" style="border-radius: 50%; width: 100px; height: 100px;  background-color:rgba(255, 255, 255, 0.2); position:relative; top:25%; left:25%; position:relative; z-index:5003 !important;">
+            
+            		<div id="button2" class="button-white" data-slide="3" style="cursor:pointer; z-index:5001 !important;"></div>
+            		<div class="button2-container" data-slide="1" style="z-index:5000 !important;"></div>
+                        
+            	</div>
+            </div>
+        
+        </div>
+        
+        <div id="fifthWhite" class="row-fluid marketing bio-white" style="background-color:rgba(0, 0, 0, 0.65); color:#FFF; text-align:center; position:relative;">
+        
+        </div>
+        
+        
+		<div class="row" style="margin-left: 0px !important; margin-right: 0px !important;">
+                
+            <div class="col-md-3 imageContainer">
+                <div class="view view-first">
+                    <img class="imageClass" src="images/svg/home.svg" />
+                    <div class="mask" style="display:table;">
+                        <span style="display:table-cell; vertical-align: middle;">
+                            <h2>HOME</h2>
+                            <p>Back to the home page</p>
+                            <a href="index.html" class="linksClassSameTab info">Go</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 imageContainer">
+                <div class="view view-first">
+                    <img class="imageClass" src="images/svg/work.svg" />
+                    <div class="mask" style="display:table;">
+                        <span style="display:table-cell; vertical-align: middle;">
+                            <h2>WORK</h2>
+                            <p>What I did and do</p>
+                            <a href="work.html" class="linksClassSameTab info">Read More</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 imageContainer">
+                <div class="view view-first">
+                    <img class="imageClass"  src="images/svg/research.svg" />
+                    <div class="mask" style="display:table;">
+                        <span style="display:table-cell; vertical-align: middle;">
+                            <h2>RESEARCH</h2>
+                            <p>My interests and activities</p>
+                            <a href="research.html" class="linksClassSameTab info">Read More</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 imageContainer">
+                <div class="view view-first">
+                    <img class="imageClass" src="images/svg/contactMe.svg" />
+                    <div class="mask" style="display:table;">
+                        <span style="display:table-cell; vertical-align: middle;">
+                            <h2>CONTACT ME</h2>
+                            <p>Send me a message if you'd like to collaborate with me</p>
+                            <a href="javascript:void(0)" onClick="showContactMeFunction();" class="linksClass info">OK</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        
+        <div id="sixthWhite" class="row-fluid marketing bio-white transparentBg" style="background-color:rgba(0, 0, 0, 0.65); display:table; width:100%; position:relative;">
+        	<span style="display:table-cell; vertical-align:middle;">
+            	<div class="centerText" style="border:0; max-width:500px; font-size:30px; padding-top: 70px; padding-bottom: 110px;">If you want to say hello to me, have some chat about tech, cinema, music, or anything you like, please do it in the way you prefer<br/><br/>All my contacts are below :-)</div>
+            </span>
+            
+            <div class="arrowUpContainerWhite arrowUp" data-slide="1"  style="z-index:5001 !important;">
+                <div class="arrowUpPng" style="background-image: url(images/arrowUpWhite.png);"></div>
+                <div class="mouseUpSvg" style="background-image: url(images/whiteMouse.png);"></div>
+            </div>
+            <div id="scrollUpText" class="scrollUp" style="z-index:5000 !important;">
+                <font id="scroll" class="scroll" style="position: relative; left: -40px; color:#FFF;">SCROLL</font><font id="down" class="down" style="position: relative; left: 30px; color:#FFF;">UP</font>
+            </div>
+            
+        </div>
+        
+        
+        
+        
+        
+        <!-- FOOTER -->
+                
+            <!-- <div id="nameContainer">
+                <h4 style="font-size:25px;">ALESSANDRO GRAZIOLI</h4>
+            </div> -->
+                
+            <footer class="footer slide" style="background-color:rgba(0, 0, 0, .85); position:relative;" data-slide="3">
+            
+                <center>
+                
+                    <div class="container" style="font-family: 'Open Sans'; font-size: 18px; color:  color:rgba(255, 255, 255, .6);">
+                        <div class="row">
+                            
+                            <div class="col-md-6" style="margin-top: 30px;">
+                                <dl class="dl-horizontal" style="text-align:left;">
+                                    <dt style="color:  color:rgba(255, 255, 255, .6);"><i class="fa fa-envelope" style="color:  color:rgba(255, 255, 255, .6);; font-size:16px;"></i> </dt><dd><a class="emailClass" id="sm" href="javascript:void(0)" onClick="showContactMeFunction();" style="color:rgba(255, 255, 255, .6);">grazioli [at] ce.unipr.it</a><br /></dd>
+                                    <dt style="color:  color:rgba(255, 255, 255, .6); margin-top:10px;"><i class="fa fa-phone" style="color:  color:rgba(255, 255, 255, .6);F; font-size:18px;"></i> </dt><dd style="color: color:rgba(255, 255, 255, .6);; margin-top:10px;">+39 0521 906183</dd>
+                                    <dt style="color:  color:rgba(255, 255, 255, .6); margin-top:10px;"><i class="fa fa-home" style="color:  color:rgba(255, 255, 255, .6);; font-size:18px;"></i> </dt>
+                                    <dd>
+                                        <address style="color:  color:rgba(255, 255, 255, .6); margin-top:10px;">
+                                            Dipartimento di Ingegneria dell'Informazione<br/>
+                                            Universit&agrave; degli Studi di Parma<br/>
+                                            viale G.P. Usberti, 181/A<br/>
+                                            43124 - Parma (PR)<br/>
+                                            Italy
+                                        </address>
+                                    </dd>
+                                </dl>                            
+                            </div>
+                            
+                            <div class="col-md-6" style="margin-top: 20px;">
+                                <div><font style="font-size:30px; font-family:'Merriweather', serif; color:rgba(255, 255, 255, .6);">Follow me</font></div>
+                                <hr style="width:250px; margin-top:5px; border-top: 1px solid rgba(255, 255, 255, .6);">
+                                <div style="margin-top: -5px;">
+                                    <a class="linksClass" href="https://twitter.com/AlessandroGraz2"><i class="fa fa-twitter-square enlarge-on-hover" style="color: rgba(255, 255, 255, .6); font-size: 50px;"></i></a>
+                                    <a class="linksClass" href="https://www.facebook.com/alessandro.grazioli1" style="margin-left:20px;"><i class="fa fa-facebook-square enlarge-on-hover" style="color: rgba(255, 255, 255, .6); font-size: 50px;"></i></a>
+                                    <a class="linksClass" href="https://plus.google.com/108184499896505903960/posts" style="margin-left:20px;"><i class="fa fa-google-plus-square enlarge-on-hover" style="color: rgba(255, 255, 255, .6); font-size: 50px;"></i></a>
+                                    <a class="linksClass" href="http://it.linkedin.com/pub/alessandro-grazioli/62/542/1a3" style="margin-left:20px;"><i class="fa fa-linkedin-square enlarge-on-hover" style="color: rgba(255, 255, 255, .6); font-size: 50px;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <hr style="width: 70%; border-top: 1px solid rgba(255, 255, 255, .6);">
+                    <font id="footerName" style="font-size:16px; color:rgba(255, 255, 255, .6);">Copyright &copy; 2014 Alessandro Grazioli</font>
+                </center>
+                
+                
+            
+            </footer>
+            <!-- END OF FOOTER -->
+        
+        
+        
+        
+        </div><!--/#bio -->
+    </div><!--/.container -->
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <!-- A Javascript script which looks in the page for images, pre-loads them and shows a percentage and a progress bar while loading -->
+    <script type="text/javascript" src="js/jquery.queryloader2.js"></script>
+    
+    <!-- E-mail address -->
+    <script type="text/javascript" src="js/email.js"></script>
+    
+    <!-- A JQuery plugin that animates color changes (used to change footer color) -->
+	<script type="text/javascript" src="js/jquery.animate-colors.js"></script>
+
+    <!-- Waypoints is a Javascript library to execute functions when particular points on the page are reached -->
+    <script type="text/javascript" src="js/jquery.waypoints.js"></script>
+    
+    <!-- A JQuery plugin to manage touch screen gestures -->
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+    
+    <!-- File containing all the functions I wrote -->
+	<script type="text/javascript" src="js/bio.js"></script>
+    
+  </body>
+</html>
