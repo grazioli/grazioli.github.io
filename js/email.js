@@ -23,5 +23,5 @@ function mail(){
 	}
 	
 	newString = tempAfter +'@' + tempBefore;
-	parent.location = 'mailto:' + newString + '?subject=Information Request';
+	parent.location = 'mailto:' + newString + '?subject=Info';
 }
