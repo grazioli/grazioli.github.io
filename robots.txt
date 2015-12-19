@@ -1,3 +1,3 @@
 User-agent: *
 
-Sitemap: http://www.agintersys.com/sitemap.xml
+Sitemap: http://grazioli.github.io/sitemap.xml

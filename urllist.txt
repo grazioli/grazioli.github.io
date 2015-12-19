@@ -1,12 +1,12 @@
-http://www.agintersys.com/
-http://www.agintersys.com/images/ico/apple-touch-icon-144x144-precomposed.png
-http://www.agintersys.com/images/ico/apple-touch-icon-114x114-precomposed.png
-http://www.agintersys.com/images/ico/apple-touch-icon-72x72-precomposed.png
-http://www.agintersys.com/images/ico/apple-touch- icon-precomposed.png
-http://www.agintersys.com/images/bg/cr.jpg
-http://www.agintersys.com/bio.html
-http://www.agintersys.com/work.html
-http://www.agintersys.com/index.html
-http://www.agintersys.com/research.html
-http://www.agintersys.com/images/bg/work.jpg
-http://www.agintersys.com/images/bg/research.jpg
+http://grazioli.github.io/
+http://grazioli.github.io/images/ico/apple-touch-icon-144x144-precomposed.png
+http://grazioli.github.io/images/ico/apple-touch-icon-114x114-precomposed.png
+http://grazioli.github.io/images/ico/apple-touch-icon-72x72-precomposed.png
+http://grazioli.github.io/images/ico/apple-touch- icon-precomposed.png
+http://grazioli.github.io/images/bg/cr.jpg
+http://grazioli.github.io/bio.html
+http://grazioli.github.io/work.html
+http://grazioli.github.io/index.html
+http://grazioli.github.io/research.html
+http://grazioli.github.io/images/bg/work.jpg
+http://grazioli.github.io/images/bg/research.jpg
