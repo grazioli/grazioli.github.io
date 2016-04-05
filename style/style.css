@@ -2168,6 +2168,25 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 	transform: translate(0px, -300px);
 }
 
+#canvas .circle {
+    display: inline-block;
+    text-align: center;
+	position: relative;
+}
+
+#canvas {
+    margin-top: 40px !important;
+}
+
+.circles-container {
+    max-width: 273px !important;
+	letter-spacing: 3px;
+}
+
+.circles-decimals {
+    font-size: .4em;
+}
+
 /* ********************************* ANIMATION ON HOVER IMAGES ********************************* */
 .view {
    height: 100%;

@@ -152,7 +152,7 @@
         
         
         <!-- ********************* Cross SVG icon and side menu ********************* -->
-        	
+        <!--
 		<script src="js/snap.svg-min.js"></script>
 		<script src="js/modernizr.custom.js"></script>
         
@@ -163,7 +163,6 @@
         </section>
         
         <div id="sideMenu">
-        	<!-- <img src="images/logo/logo.png" width="150" /> -->
             
             <div class="menu-button-current" style="display: table; overflow: hidden;">
                 <div style="display: table-cell; vertical-align: middle;">
@@ -198,16 +197,17 @@
             </div>
             
             <div id="sideMenuLinks">
-            	<a class="linksClass" href="https://twitter.com/AlessandroGraz2"><i class="fa fa-twitter"></i></a>
-               <a class="linksClass" href="https://www.facebook.com/alessandro.grazioli1" style="margin-left:20px;"><i class="fa fa-facebook"></i></a>
-               <a class="linksClass" href="https://plus.google.com/108184499896505903960/posts" style="margin-left:20px;"><i class="fa fa-google-plus"></i></a>
-               <a class="linksClass" href="http://it.linkedin.com/pub/alessandro-grazioli/62/542/1a3" style="margin-left:20px;"><i class="fa fa-linkedin"></i></a>
+                <a class="linksClass" href="https://twitter.com/AlessandroGraz2"><i class="fa fa-twitter"></i></a>
+                <a class="linksClass" href="https://www.facebook.com/alessandro.grazioli1" style="margin-left:20px;"><i class="fa fa-facebook"></i></a>
+                <a class="linksClass" href="https://plus.google.com/108184499896505903960/posts" style="margin-left:20px;"><i class="fa fa-google-plus"></i></a>
+                <a class="linksClass" href="http://it.linkedin.com/pub/alessandro-grazioli/62/542/1a3" style="margin-left:20px;"><i class="fa fa-linkedin"></i></a>
             </div>
             
-       </div>
+        </div>
        
-       <!-- Code for the SVG menu button --> 
-		<script src="js/svgicons-config.js"></script>
+        <!-- Code for the SVG menu button -->
+        <!--
+        <script src="js/svgicons-config.js"></script>
 		<script src="js/svgicons.js"></script>
 		<script>
 			(function() {
@@ -220,7 +220,7 @@
 				new svgIcon( document.querySelector( '.si-icons-easing .si-icon-hamburger-cross' ), svgIconConfig, { easing : mina.elastic, speed: 600 } );
 			})();
 		</script>
-        
+        -->
         <!-- ************************************************************************ -->
         
         
@@ -703,7 +703,19 @@
                     
                     <hr id="blueHr3" class="white-hr">
                     
-                    <div id="thirdWhiteText2" class="centerText2"><font class="papers-number">0</font><br />PUBLISHED WORKS</div>
+                    <div id="canvas" class="circles-container">
+                        PUBLISHED WORKS<br /><br />
+                        <div style="float: left;">
+                            <div class="circle" id="circles-0"></div><br />
+                            journals
+                        </div>
+                        <div style="float: left; margin-left:40px;">
+                            <div class="circle" id="circles-1"></div><br />
+                            conferences
+                        </div>                        
+                    </div>
+                    
+                    <!-- <div id="thirdWhiteText2" class="centerText2"><font class="papers-number">0</font><br />PUBLISHED WORKS</div> -->
                     
                 </div><!-- /.container -->
             </div><!--/#thirdWhite -->
@@ -1098,6 +1110,9 @@
     
     <!-- A JQuery plugin to manage touch screen gestures -->
     <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+    
+    <!-- A library to manage animated circles -->
+    <script src="js/circles.js"></script>
         
     <!-- File containing all the functions I wrote -->
 	<script type="text/javascript" src="js/main.js"></script>

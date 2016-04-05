@@ -29,6 +29,8 @@ var bodyWidth = $(window).width(),
 	barAnimationDuration = 200,
 	barAnimationDurationSmallMovement = 130,
 	publishedPapers = 8,
+    publishedPapersInternationalJournal = 3,
+    publishedPapersInternationalConference = 5,
 	counterUpdateRate = 100,
 	counter = 0;
 
@@ -65,17 +67,16 @@ function togglenavbarBg() {
 		/* Removing the shadow under the bar */
 		$('#navbarContainer').removeClass('navbar-shadow');
 		
+        /*
 		if($('#sideMenu').css('left') == '0px') {
 			$('.si-icon').trigger('click');
 			$('.si-icon').animate({'left': '-60px'}, barAnimationDuration);
-			$('#menuButtonBg').animate({'left': '-350px'}, barAnimationDuration);
+			$('#menuButtonBg').animate({'left': '-350px'}, barAnimationDuration);*/
 			$('#navbarContainer').animate({ 'background-color': 'rgba(255, 255, 255, 0)' }, barAnimationDuration, function() {
 				animatingBar = false;	
-			});
+			});/*
 		} else {
 		
-			/* $('.si-icon').trigger('click'); */
-			
 			$('.si-icon').animate({'left': '-60px'}, barAnimationDuration);
 			$('#sideMenu').animate({'left': '-350px'}, barAnimationDuration);
 			$('#menuButtonBg').animate({'left': '-60px'}, barAnimationDuration,function(){
@@ -83,7 +84,7 @@ function togglenavbarBg() {
 					animatingBar = false;	
 				});
 			});
-		}
+		}*/
 						
 		/* Showing the bottom border of the bar */
 		// $('#navbar-border-bottom').animate({'opacity': '1'}, barAnimationDuration);
@@ -227,7 +228,7 @@ function body_sizer() {
 	$(".white").css("width", bodyWidth);
 	
 	// $('#bio').css("min-width", '800px');
-	$('#bio').css("min-height", '725px');
+	$('#bio').css("min-height", '780px');
 	
 	// var sum = parseInt(($(window).height() / 2.5) + $("#bioFirstRow").height() + $("#bioSecondRow").height());
 	
@@ -247,7 +248,7 @@ function body_sizer() {
 	
 	// $('#researchBlurred').css("height", bodyHeight);
 	// $('#publications').css("min-width", '800px');
-	$('#publications').css("min-height", '780px');
+	$('#publications').css("min-height", '900px');
 	$('#publications').css("height", bodyHeight);
 	// $('#publicationsBlurred').css("height", bodyHeight);
 	
@@ -400,12 +401,14 @@ function body_sizer() {
 	}
 	$('#sideMenu').css('top', $('.navbar').height()); */
 	
+    /*
 	if($('#sideMenu').height() <  bodyHeight) {
 		$('#sideMenu').css('height', bodyHeight);
 	}
 	$('#sideMenu').css('top', '0px');
 	$('#sideMenu').css('padding-top', $('.navbar').height() + 10 + 'px');
-	
+	*/
+    
 	// var deskTop = $('#bio').height() + $('#whiteBelowBio').height() + $('#research').height() + $('#whiteBelowResearch').height() + $('#publications').height() + $('#whiteBelowPublications').height();
 	// console.log("----- " + $(body).height());
 	
@@ -463,6 +466,7 @@ var adaptImage = function(imageElement) {
 	});
 }
 
+/*
 var showMenu = function() {
 	
 	var amountToSlide = '350px';
@@ -471,33 +475,7 @@ var showMenu = function() {
 		$('#sideMenu').animate({
 				left: '-' + amountToSlide
 			}, barAnimationDuration, function(){ });
-		/*
-		$('.si-icon').animate({
-				left: '5px'
-			}, barAnimationDuration, function(){ });
-		$('#menuButtonBg').animate({
-				left: '0px'
-			}, barAnimationDuration, function(){ }); */
-		/*
-		$('#bio').animate({
-				left: '0px'
-			}, barAnimationDuration, function(){ });
-		$('#whiteBelowBio').animate({
-				left: '0px'
-			}, barAnimationDuration, function(){ });
-		$('#research').animate({
-				left: '0px'
-			}, barAnimationDuration, function(){ });
-		$('#whiteBelowResearch').animate({
-				left: '0px'
-			}, barAnimationDuration, function(){ });	
-		$('#publications').animate({
-				left: '0px'
-			}, barAnimationDuration, function(){ });
-		$('#whiteBelowPublications').animate({
-				left: '0px'
-			}, barAnimationDuration, function(){ }); */
-		
+				
 	} else {
 		$('#sideMenu').animate({
 				left: '0px'
@@ -513,35 +491,10 @@ var showMenu = function() {
 				
 				});	
 			});
-		/*
-		$('.si-icon').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ });
-		$('#menuButtonBg').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ }); */
-		
-		/*
-		$('#bio').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ });
-		$('#whiteBelowBio').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ });
-		$('#research').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ });
-		$('#whiteBelowResearch').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ });	
-		$('#publications').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ });
-		$('#whiteBelowPublications').animate({
-				left: amountToSlide
-			}, barAnimationDuration, function(){ }); */	
 	}
+    
 }
+*/
 
 <!--END OF WINDOW RESIZE MANAGEMENT FOR THE 2 ASIDE DIVS -->
 		
@@ -884,6 +837,7 @@ jQuery(document).ready(function ($) {
 	
 	}, { offset: $(window).height() / 1.3});
 	
+    /*
 	var timerId; // current timer if started
 
 	function clockStart() {  
@@ -906,8 +860,61 @@ jQuery(document).ready(function ($) {
 			clockStop();
 		}
 	}
+    */
+    
+    
+    /* ************************* Circles management ********************* */
+    
+    /* Center circles container based on its max-width */
+	$('.circles-container').css("margin-left", (bodyWidth - $('.circles-container').css("max-width").replace("px", "")) / 2);
+    
+    var canvas = document.getElementById('canvas'),
+        circlesCreated = false;
+    
+    function onScroll() {
+        if (!circlesCreated && elementInViewport(canvas)) {
+            circlesCreated = true;
+            createCircles();
+        }
+    }
 
+    function elementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top  >= 0 &&
+            rect.left >= 0 &&
+            rect.top  <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
 
+    function createCircles() {
+        var colors = [
+                ['rgba(255, 255, 255, .15)', 'rgba(255, 255, 255, 1)'],
+                ['rgba(255, 255, 255, .15)', 'rgba(255, 255, 255, 1)']
+            ],
+            circles = [],
+            values = [publishedPapersInternationalJournal, publishedPapersInternationalConference];
+
+        for (var i = 0; i < colors.length; i++) {
+            var child = document.getElementById('circles-' + i),
+                percentage = values[i],
+                circle = Circles.create({
+                    id:         child.id,
+                    value:      percentage,
+                    radius:     50,
+                    width:      10,
+                    colors:     colors[i],
+                    maxValue:   publishedPapersInternationalJournal + publishedPapersInternationalConference, // The full circle represents this value (e.g., if the circles goes from 0 to 100, this must be 100)
+                });
+            circles.push(circle);
+        }
+    }
+        
+    window.onscroll = onScroll;
+    
+    /* ************************************************************************ */
+
+    /*
 	$('#thirdWhiteText2').waypoint(function() {
 	
 		$('#thirdWhiteText2').animate({'left':0, 'opacity': 1}, 600, function() {
@@ -919,6 +926,7 @@ jQuery(document).ready(function ($) {
 		});
 	
 	}, { offset: $(window).height() / 1.3});
+    */
 	
 	/* ************************************************************************ */
 	
