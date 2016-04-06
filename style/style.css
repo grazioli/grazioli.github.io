@@ -402,10 +402,13 @@ textarea {
 }
 
 .whiteDivContainingBars {
-	background-color: #FFF; 
+	background-color: #FFF;
+    
+    /* Grid background
 	background-image: linear-gradient(#F6F6F6 .1em, transparent .1em);
 	background-size: 100% 3.2em;
 	overflow: hidden;
+    */
 }
 
 .heavy-text {
@@ -1794,7 +1797,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 	background-attachment: fixed;
 	background-position: 0 0;
 	background-repeat: no-repeat;
-	background-size:cover !important;
+	background-size: cover !important;
 	position: relative;
 	width: 100%;
 }

@@ -34,6 +34,34 @@ var bodyWidth = $(window).width(),
 	counterUpdateRate = 100,
 	counter = 0;
 
+/* *************************************** Bar charts data *************************************** */
+var workBarChartData = {
+    labels : ["Software Dev.", "IT Consultant", "Web Dev.", "Teacher"],
+    datasets : [
+        {
+            fillColor : "rgba(151,187,205,0.5)",
+            strokeColor : "rgba(151,187,205,0.8)",
+            highlightFill : "rgba(151,187,205,0.75)",
+            highlightStroke : "rgba(151,187,205,1)",
+            data : [45, 30, 15, 10]
+        }
+    ]
+};
+
+var researchBarChartData = {
+    labels : ["Mobile Comp.", "Autonomic Comp.", "P2P Comp.", "Cloud Comp."],
+    datasets : [
+        {
+            fillColor : "rgba(151,187,205,0.5)",
+            strokeColor : "rgba(151,187,205,0.8)",
+            highlightFill : "rgba(151,187,205,0.75)",
+            highlightStroke : "rgba(151,187,205,1)",
+            data : [10, 20, 30, 40]
+        }
+    ]
+};
+/* *************************************** End of bar charts data *************************************** */
+
 /* Method to change the background color of the menu bar (requires jquery.animate-colors.js plugin) */
 function togglenavbarBg() {
 	
@@ -171,16 +199,22 @@ function body_sizer() {
 	$("#sixthBar").css("margin-top", ((30) + 10) * 5 + 5);
 	
 	/* ************************************************************* */
-	
+    
 	/* ********************** Divs with vertical bars ********************** */
+    
+    $("#workBarCanvas").attr("width", $('#workBarContainer').width());
+    $("#workBarCanvas").attr("height", $('#workBarContainer').height());
 	
 	/* Setting bars heigth */
+    /*
 	$("#firstVerticalBar").css("height", '25%');
 	$("#secondVerticalBar").css("height", '40%');
 	$("#thirdVerticalBar").css("height", '65%');
 	$("#fourthVerticalBar").css("height", '95%');
+    */
 	
 	/* Setting bars width */
+    /*
 	$("#firstVerticalBar").css("margin-right", $('#workBarContainer').width() * 1.3 / 100);
 	$("#secondVerticalBar").css("margin-right", $('#workBarContainer').width() * 1.3 / 100);
 	$("#thirdVerticalBar").css("margin-right", $('#workBarContainer').width() * 1.3 / 100);
@@ -194,15 +228,19 @@ function body_sizer() {
 	$("#secondVerticalBarText").css("width",$("#secondVerticalBar").css("width"));
 	$("#thirdVerticalBarText").css("width", $("#thirdVerticalBar").css("width"));
 	$("#fourthVerticalBarText").css("width", $("#fourthVerticalBar").css("width"));
+    */
 		
 	/* Setting bars heigth */
+    /*
 	$("#firstVerticalBarFromBottom").css("height", '20%');
 	$("#secondVerticalBarFromBottom").css("height", '30%');
 	$("#thirdVerticalBarFromBottom").css("height", '50%');
 	$("#fourthVerticalBarFromBottom").css("height", '72%');
 	$("#fifthVerticalBarFromBottom").css("height", '95%');
+    */
 	
-	/* Setting bars width */	
+	/* Setting bars width */
+    /*
 	$("#firstVerticalBarFromBottom").css("margin-right", $('#researchBarContainer').width() * 1.25 / 100);
 	$("#secondVerticalBarFromBottom").css("margin-right", $('#researchBarContainer').width() * 1.25 / 100);
 	$("#thirdVerticalBarFromBottom").css("margin-right", $('#researchBarContainer').width() * 1.25 / 100);
@@ -219,6 +257,7 @@ function body_sizer() {
 	$("#thirdVerticalBarFromBottomText").css("width", $("#thirdVerticalBarFromBottom").css("width"));
 	$("#fourthVerticalBarFromBottomText").css("width", $("#fourthVerticalBarFromBottom").css("width"));
 	$("#fifthVerticalBarFromBottomText").css("width", $("#fifthVerticalBarFromBottom").css("width"));
+    */
 	
 	$(".leftDivBelowResearch").css("width", $(window).width() - $(".rightDivBelowResearch").width());
 			
@@ -248,7 +287,7 @@ function body_sizer() {
 	
 	// $('#researchBlurred').css("height", bodyHeight);
 	// $('#publications').css("min-width", '800px');
-	$('#publications').css("min-height", '900px');
+	$('#publications').css("min-height", '1000px');
 	$('#publications').css("height", bodyHeight);
 	// $('#publicationsBlurred').css("height", bodyHeight);
 	
@@ -516,7 +555,7 @@ var showMenu = function() {
 	
 	
 
-<!-- FUNCTION CALLED WHEN PAGE IS LOADED -->
+/* FUNCTION CALLED WHEN PAGE IS LOADED */
 
 /* Taking the browser back to initial position when page is reloaded */
 window.onload = function() {
@@ -542,6 +581,42 @@ if (!isMobile()) {
 }
 
 jQuery(document).ready(function ($) {
+    
+    var ctxWorkBar = document.getElementById("workBarCanvas").getContext("2d");
+    window.myBar = new Chart(ctxWorkBar).Bar(workBarChartData, {
+        responsive : true,
+        animationEasing: "easeOutBounce",
+        showTooltips: true,
+        tooltipFontColor: "#FFF",
+        tooltipTitleFontColor: "#FFF",
+        tooltipFillColor: "rgba(0,0,0,.3)",
+        tooltipTitleFontSize: 0, // Hiding tooltip title by setting its font size as 0
+        tooltipTemplate: "<%= value %>" + "%",
+        maintainAspectRatio: false,
+        scaleFontSize: 10,
+        scaleOverride : true,
+        scaleSteps : 5,
+        scaleStepWidth : 10,
+        scaleStartValue : 0 
+    });
+    
+    var ctxResearchBar = document.getElementById("researchBarCanvas").getContext("2d");
+    window.myBar = new Chart(ctxResearchBar).Bar(researchBarChartData, {
+        responsive : true,
+        animationEasing: "easeOutBounce",
+        showTooltips: true,
+        tooltipFontColor: "#FFF",
+        tooltipTitleFontColor: "#FFF",
+        tooltipFillColor: "rgba(0,0,0,.3)",
+        tooltipTitleFontSize: 0, // Hiding tooltip title by setting its font size as 0
+        tooltipTemplate: "<%= value %>" + "%",
+        maintainAspectRatio: false,
+        scaleFontSize: 10,
+        scaleOverride : true,
+        scaleSteps : 5,
+        scaleStepWidth : 10,
+        scaleStartValue : 0 
+    });
 	
 	/* Centering the rotating crown (rays.png image) of the preloader window */
 	/* $("#raysImg").css('left', ($(window).width() / 2) - ($("#raysImg").width() / 2));

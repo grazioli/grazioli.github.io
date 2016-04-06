@@ -36,15 +36,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144x144-precomposed.png">
     
     <!-- For iPhone with high-resolution Retina display: -->
-    
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114x114-precomposed.png">
     
     <!-- For first- and second-generation iPad: -->
-    
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72x72-precomposed.png">
     
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch- icon-precomposed.png">
         
     <script>
@@ -584,7 +581,9 @@
                             </div>
                         </div>
                         
-                        <div id="workBarContainer" class="col-md-6 whiteDivContainingBars" style="padding: 0px; margin: 0px; height: 400px; border-left:1px solid #F6F6F6; padding-left:10px; padding-right:10px;">
+                        <div id="workBarContainer" class="col-md-6 whiteDivContainingBars" style="padding: 10px; margin: 0px; height: 400px; border-left:1px solid #F6F6F6; padding-left:10px; padding-right:10px;">
+                            
+                            <!--
                             <div class="bar-graph-vertical" id="firstVerticalBar">
                                 <p class="lead vertical-bar-text-from-top">
                                     Programming Teacher
@@ -605,6 +604,12 @@
                                     IT Consultant
                                 </p>
                             </div>
+                            -->
+                            
+                            <canvas id="workBarCanvas"></canvas>
+                            
+                            <div id="chartTitle" style="position:absolute; top:40px; right:60px;"><b style="color:#555; font-size:12px;">% of job time spent for occupation</b></div>
+                            
                         </div>
                         
                     </div>
@@ -749,7 +754,9 @@
                 <div class="container-fluid" style="font-family: 'Open Sans'; font-size: 18px; color: #FFF;">
                     <div class="row">
                         
-                        <div id="researchBarContainer" class="col-md-6 whiteDivContainingBars" style="padding: 0px; margin: 0px; height: 400px; border-right:1px solid #F6F6F6; padding-left:10px; padding-right:10px;">
+                        <div id="researchBarContainer" class="col-md-6 whiteDivContainingBars" style="padding: 10px; margin: 0px; height: 400px; border-right:1px solid #F6F6F6; padding-left:10px; padding-right:10px;">
+                            
+                            <!--
                             <div class="bar-graph-vertical-from-bottom" id="firstVerticalBarFromBottom" style="text-align:center;">
                                  <p class="lead vertical-bar-text-from-bottom">
                                     Vehicular Networks
@@ -775,6 +782,12 @@
                                     Mobile Computing
                                 </p>
                             </div>
+                            -->
+                            
+                            <canvas id="researchBarCanvas"></canvas>
+                            
+                            <div id="chartTitle" style="position:absolute; top:40px; left:60px;"><b style="color:#555; font-size:12px;">% of research time spent for topic</b></div>
+                            
                         </div>
                         
                          <div class="col-md-6" style="height: 400px; padding: 15px;">
@@ -1113,6 +1126,9 @@
     
     <!-- A library to manage animated circles -->
     <script src="js/circles.js"></script>
+    
+    <!-- Graph library used to draw the bar diagrams -->
+    <script src="js/Chart.js"></script>
         
     <!-- File containing all the functions I wrote -->
 	<script type="text/javascript" src="js/main.js"></script>
