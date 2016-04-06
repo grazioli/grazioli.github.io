@@ -259,8 +259,6 @@ function body_sizer() {
 	$("#fifthVerticalBarFromBottomText").css("width", $("#fifthVerticalBarFromBottom").css("width"));
     */
 	
-	$(".leftDivBelowResearch").css("width", $(window).width() - $(".rightDivBelowResearch").width());
-			
 	/* ************************************************************* */
 	
 	// $(".white").css("min-width", '800px');
@@ -535,7 +533,7 @@ var showMenu = function() {
 }
 */
 
-<!--END OF WINDOW RESIZE MANAGEMENT FOR THE 2 ASIDE DIVS -->
+/* ******************** END OF WINDOW RESIZE MANAGEMENT FOR THE 2 ASIDE DIVS ******************** */
 		
 	var fifthCurrentlyDisplayed = false;
 	var sixthCurrentlyDisplayed = false;
@@ -555,7 +553,7 @@ var showMenu = function() {
 	
 	
 
-/* FUNCTION CALLED WHEN PAGE IS LOADED */
+/* ******************** FUNCTION CALLED WHEN PAGE IS LOADED ******************** */
 
 /* Taking the browser back to initial position when page is reloaded */
 window.onload = function() {
@@ -805,9 +803,9 @@ jQuery(document).ready(function ($) {
 	
 	
 	
-	<!-- USING WAYPOINT.JS TO TRIGGER EVENTS, AND MANAGE THEM, WHEN DIVS REACH THE TOP OF THE VIEWPORT (the part of the window that the user sees) -->
+	/* USING WAYPOINT.JS TO TRIGGER EVENTS, AND MANAGE THEM, WHEN DIVS REACH THE TOP OF THE VIEWPORT (the part of the window that the user sees) */
 	
-	<!-- CHANGE COLORS OF LITTLE BALLS ON THE RIGHT AND OF PARALLAXDIVs BACKGROUNDS -->
+	/* CHANGE COLORS OF LITTLE BALLS ON THE RIGHT AND OF PARALLAXDIVs BACKGROUNDS */
 			
 	// var colorToReplace = "rgb(255,251,137, 0.3); -moz-radial-gradient(center, ellipse cover, rgba(255,251,137,1) 0%, rgba(255,170,50,0.3) 100%); -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,251,137,0.3)), color-stop(100%,rgba(255,170,50,0.3))); -webkit-radial-gradient(center, ellipse cover, rgba(255,251,137,0.3) 0%,rgba(255,170,50,0.3) 100%); -o-radial-gradient(center, ellipse cover, rgba(255,251,137,0.3) 0%,rgba(255,170,50,0.3) 100%); -ms-radial-gradient(center, ellipse cover, rgba(255,251,137,0.3) 0%,rgba(255,170,50,0.3) 100%); radial-gradient(ellipse at center, rgba(255,251,137,0.3) 0%,rgba(255,170,50,0.3) 100%);";
 	
@@ -853,7 +851,7 @@ jQuery(document).ready(function ($) {
 		$('#thirdBgDarkOverlay').animate({'opacity': 0}, 800);
 		$('#fourthBgDarkOverlay').animate({'opacity': 1}, 800);
 	
-	/*
+	   /*
 		$('#workContainer').animate({'top':100, 'opacity': 1}, 600);
 		
 		/* Rotate div if not yet rotated */
@@ -1277,69 +1275,69 @@ jQuery(document).ready(function ($) {
 	
 });
 
-<!-- END OF WAYPOINT.JS INIZIALIZATION -->
+/* ****************** END OF WAYPOINT.JS INIZIALIZATION ****************** */
 
 
 
-<!-- COOKIE MANAGEMENT -->
+/* ****************** COOKIE MANAGEMENT ****************** */
 
-	function getCookie(name) {
+function getCookie(name) {
 
-		var search = name + "=";
+    var search = name + "=";
+
+    if (document.cookie.length > 0) { // if there are cookies
+
+        offset = document.cookie.indexOf(search);
+
+        // if cookie exists
+        if (offset != -1) { 
+
+            offset += search.length; 
+
+            // set index of beginning of value
+            end = document.cookie.indexOf(";", offset); 
+
+            // set index of end of cookie value
+            if (end == -1) 
+
+                end = document.cookie.length;
+
+                return unescape(document.cookie.substring(offset, end));
+        } 
+    }
+}
+
+function setCookie(NameOfCookie, value, expiredays) {
+    var ExpireDate = new Date();
+    ExpireDate.setTime(ExpireDate.getTime() + (expiredays * 24 * 3600 * 1000));
+
+    document.cookie = NameOfCookie + "=language:" + escape(value) + ";path=/;" +  
+    ((expiredays == null) ? "" : "; expires=" + ExpireDate.toGMTString());
+}
+
+/* DE-COMMENT THIS  TO START CREATING COOKIES
+
+var cookieContent = getCookie("bazini"); 
+if (cookieContent == null) {		
+
+    setCookie('bazini','italian', '1');
+
+}
+
+else {					
+
+    // Get the parameters of the cookie
+    var the_values = cookieContent;
+
+    // the_values contains the string"uid:" followed by the uid value used to authenticate the session of the user					
+    var broken_language = the_values.split(":");
+    var language = broken_language[1];
+
+    if(language == "english") engLang();		
+
+} */
 	
-		if (document.cookie.length > 0) { // if there are cookies
-	
-			offset = document.cookie.indexOf(search);
-	
-			// if cookie exists
-			if (offset != -1) { 
-	
-				offset += search.length; 
-	
-				// set index of beginning of value
-				end = document.cookie.indexOf(";", offset); 
-	
-				// set index of end of cookie value
-				if (end == -1) 
-	
-					end = document.cookie.length;
-	
-					return unescape(document.cookie.substring(offset, end));
-			} 
-		}
-	}
-	
-	function setCookie(NameOfCookie, value, expiredays) {
-		var ExpireDate = new Date();
-		ExpireDate.setTime(ExpireDate.getTime() + (expiredays * 24 * 3600 * 1000));
-	
-		document.cookie = NameOfCookie + "=language:" + escape(value) + ";path=/;" +  
-		((expiredays == null) ? "" : "; expires=" + ExpireDate.toGMTString());
-	}
-					
-	/* DE-COMMENT THIS  TO START CREATING COOKIES
-	
-	var cookieContent = getCookie("bazini"); 
-	if (cookieContent == null) {		
-						
-		setCookie('bazini','italian', '1');
-						
-	}
-					
-	else {					
-								
-		// Get the parameters of the cookie
-		var the_values = cookieContent;
-						
-		// the_values contains the string"uid:" followed by the uid value used to authenticate the session of the user					
-		var broken_language = the_values.split(":");
-		var language = broken_language[1];
-		
-		if(language == "english") engLang();		
-	
-	} */
-	
-<!-- END OF COOKIE MANAGEMENT -->
+/* ****************** END OF COOKIE MANAGEMENT ****************** */
 
 var showPersonalPhotoOverlay = function() {
 	// $('.personalPhotoWhite').animate({opacity: 1}, 100);
