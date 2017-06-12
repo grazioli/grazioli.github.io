@@ -30,11 +30,12 @@ var bodyWidth = $(window).width(),
 	barAnimationDurationSmallMovement = 130,
 	publishedPapers = 8,
     publishedPapersInternationalJournal = 3,
-    publishedPapersInternationalConference = 5,
+    publishedPapersInternationalConference = 6,
 	counterUpdateRate = 100,
 	counter = 0;
 
 /* *************************************** Bar charts data *************************************** */
+
 var workBarChartData = {
     labels : ["Software Dev.", "IT Consultant", "Web Dev.", "Teacher"],
     datasets : [
@@ -60,7 +61,114 @@ var researchBarChartData = {
         }
     ]
 };
+
 /* *************************************** End of bar charts data *************************************** */
+
+/* *************************************** Polar chart data *************************************** */
+
+var polarAreaCreated = false;
+
+var ctxPolarArea = document.getElementById("polarAreaCanvas").getContext("2d");
+
+var transparentPolarAreaChartData = [
+    {
+        value: 300,
+        color:"rgba(0, 0, 0, 0)",
+        highlight: "rgba(0, 0, 0, 0)",
+        label: "Red"
+    }, {
+        value: 50,
+        color:"rgba(0, 0, 0, 0)",
+        highlight: "rgba(0, 0, 0, 0)",
+        label: "Green"
+    }, {
+        value: 100,
+        color:"rgba(0, 0, 0, 0)",
+        highlight: "rgba(0, 0, 0, 0)",
+        label: "Yellow"
+    }, {
+        value: 40,
+        color:"rgba(0, 0, 0, 0)",
+        highlight: "rgba(0, 0, 0, 0)",
+        label: "Grey"
+    }, {
+        value: 120,
+        color:"rgba(0, 0, 0, 0)",
+        highlight: "rgba(0, 0, 0, 0)",
+        label: "Dark Grey"
+    }
+];
+
+var polarAreaChartData = [
+    {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Red"
+    }, {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Green"
+    }, {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Yellow"
+    }, {
+        value: 40,
+        color: "#949FB1",
+        highlight: "#A8B3C5",
+        label: "Grey"
+    }, {
+        value: 120,
+        color: "#4D5360",
+        highlight: "#616774",
+        label: "Dark Grey"
+    }
+];
+
+/* *************************************** End of polar area chart data *************************************** */
+
+/* *************************************** Radar chart data *************************************** */
+
+var radarChartCreated = false;
+
+var ctxRadarArea = document.getElementById("polarAreaCanvas").getContext("2d");
+
+var radarChartDataTransparent = {
+    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0)",
+            strokeColor: "rgba(220,220,220,0)",
+            pointColor: "rgba(220,220,220,0)",
+            pointStrokeColor: "rgba(220,220,220,0)",
+            pointHighlightFill: "rgba(220,220,220,0)",
+            pointHighlightStroke: "rgba(220,220,220,0)",
+            data: [65,59,90,81,56,55,40]
+        }
+    ]
+};
+
+var radarChartData = {
+    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [65,59,90,81,56,55,40]
+        }
+    ]
+};
+
+/* *************************************** End of radar chart data *************************************** */
 
 /* Method to change the background color of the menu bar (requires jquery.animate-colors.js plugin) */
 function togglenavbarBg() {
@@ -202,6 +310,9 @@ function body_sizer() {
     
 	/* ********************** Divs with vertical bars ********************** */
     
+    $("#researchBarCanvas").attr("width", $('#researchBarContainer').width());
+    $("#researchBarCanvas").attr("height", $('#researchBarContainer').height());
+    
     $("#workBarCanvas").attr("width", $('#workBarContainer').width());
     $("#workBarCanvas").attr("height", $('#workBarContainer').height());
 	
@@ -318,6 +429,37 @@ function body_sizer() {
 	
 	$('.divBetweenWhitesContent').css("height", whiteBelowBio2Margin + 'px');
 	$('.divBetweenWhitesContent').css("line-height", whiteBelowBio2Margin + 'px');
+    
+    /* ********************** Div with polar area chart ********************** */
+    
+    $("#polarAreaCanvasContainer").css("width", $('#divBetweenWhites').height() + "px");
+    $("#polarAreaCanvasContainer").css("height", $('#divBetweenWhites').height() + "px");
+    $("#polarAreaCanvasContainer").css("top", ( ($('#divBetweenWhites').height() / 2) - ($('#polarAreaCanvasContainer').outerHeight() / 2) ));
+    $("#polarAreaCanvasContainer").css("left", ( ($('#divBetweenWhites').width() / 2) - ($('#polarAreaCanvasContainer').outerWidth() / 2) ));
+    
+    // Setting canvas containing polar area chart size
+    ctxPolarArea.canvas.height = $('#polarAreaCanvasContainer').height();
+    ctxPolarArea.canvas.width = $('#polarAreaCanvasContainer').width();
+    
+    // Initial transparent polar area chart (the content is added by a waypoint function)
+    /* window.myPolarArea = new Chart(ctxPolarArea).PolarArea(transparentPolarAreaChartData, {
+        responsive : true,
+        showTooltips: false,
+        maintainAspectRatio: true,
+        scaleLineColor: "rgba(255, 255, 255, .4)",
+        segmentShowStroke : false
+    });
+    */
+    
+    window.radarChartData = new Chart(ctxRadarArea).Radar(radarChartDataTransparent, {
+        responsive : true,
+        showTooltips: false,
+        maintainAspectRatio: true,
+        scaleLineColor: "rgba(255, 255, 255, .4)",
+        segmentShowStroke : false
+    });
+    
+    /* ********************** End of div with polar area chart ********************** */
 	
 	$('#whiteBelowBio2').css("top", $('#bio').height() + $('#whiteBelowBio').height() + $('#divBetweenWhites').height());
 	
@@ -599,7 +741,7 @@ jQuery(document).ready(function ($) {
     });
     
     var ctxResearchBar = document.getElementById("researchBarCanvas").getContext("2d");
-    window.myBar = new Chart(ctxResearchBar).Bar(researchBarChartData, {
+    window.myBar2 = new Chart(ctxResearchBar).Bar(researchBarChartData, {
         responsive : true,
         animationEasing: "easeOutBounce",
         showTooltips: true,
@@ -1044,6 +1186,70 @@ jQuery(document).ready(function ($) {
 		$('#barText6').delay(1200).animate({'left': $('#sixthBar').width() + 10}, 800);
 	
 	}, { offset: $(window).height() / 2.4 });
+    
+    // Animating the polar area chart
+    $('#divBetweenWhites').waypoint(function() {
+        
+        /*
+        if (!polarAreaCreated) {
+            window.myPolarArea = new Chart(ctxPolarArea).PolarArea(polarAreaChartData, {
+                responsive : true,
+                animationEasing: "easeOutBounce",
+                showTooltips: true,
+                tooltipFontColor: "#FFF",
+                tooltipTitleFontColor: "#FFF",
+                tooltipFillColor: "rgba(0,0,0,.3)",
+                tooltipTitleFontSize: 0, // Hiding tooltip title by setting its font size as 0
+                tooltipTemplate: "<%= value %>" + "%",
+                scaleFontSize: 10,
+                maintainAspectRatio: true,
+                scaleLineColor: "rgba(255, 255, 255, .4)",
+                segmentShowStroke : false
+            });
+            
+            polarAreaCreated = true;
+        }
+        */
+        
+        var radarChartData = {
+		labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+		datasets: [
+			{
+				label: "My First dataset",
+				fillColor: "rgba(220,220,220,0.2)",
+				strokeColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(220,220,220,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(220,220,220,1)",
+				data: [65,59,90,81,56,55,40]
+			},
+			{
+				label: "My Second dataset",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [28,48,40,19,96,27,100]
+			}
+		]
+	};
+        
+        if (!radarChartCreated) {
+            window.radarChartData = new Chart(ctxRadarArea).Radar(radarChartData, {
+                responsive : true,
+                showTooltips: false,
+                maintainAspectRatio: true,
+                scaleLineColor: "rgba(255, 255, 255, .4)",
+                segmentShowStroke : false
+            });
+            
+            radarChartCreated = true;
+        }
+        
+    }, { offset: $(window).height() / 2.4 });
 	
 	$('#whiteBelowResearch').waypoint(function() {
 	
